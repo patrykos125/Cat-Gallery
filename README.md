@@ -1,3 +1,3 @@
-# Cat-Gallery#
+# Cat-Gallery
 
 ##https://catgallerypatryk.netlify.app/
