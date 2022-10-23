@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(45deg,
+    rgb(64,161,161),
+    rgb(78,76,226));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+
+}
+h1{
+    margin: 64px;
+    text-align: center;
+    font-size: 96px;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    justify-content: space-evenly;
+    background: linear-gradient(60deg ,
+    rgba(255 ,255,255,0.1),
+    rgba(255 ,255,255,0.5));
+    padding: 64px;
+    border-radius: 40px;
+
+}
+.thumbnail{
+    border :solid 3px rgba(255 ,255 ,255,0.9) ;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    max-width: 300px;
+    max-height: 200px;
+    margin: 32px;
+    transform: scale(1);
+   transition: transform 0.3s;
+    box-shadow: 0 0 48px rgba(0 0  0.5);
+
+}
+.thumbnail:hover{
+    transform :scale(1.2);
+}
+
+
+.thumbnail img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.thumbnail img:focus{
+    border :solid 5px rgb(78,76,226);
+}
+.popup{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(0 ,0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    position: fixed;
+    animation: fadeIn  0.3s;
+
+}
+.popup.hidden{
+    display: none;
+
+}
+.popup.fade-out{
+    animation: fadeOut 0.3s both;
+
+}
+.popup__img{
+    max-height: 80%;
+    max-width: 80%;
+}
+
+
+.popup__arrow{
+    border: none;
+    position: absolute;
+    font-size: 128px;
+    cursor: pointer;
+    top: 50%;
+    background-color: white;
+    border-radius: 50%;
+    width: 128px;
+    opacity: 0.3;
+    transition: opacity 0.3s;
+
+}
+.popup__arrow:hover , .popupCloseButton:hover{
+    opacity: 1;
+}
+.popup__arrow--left{
+
+    left: 5%;
+}
+.popup__arrow--right{
+
+    right:5% ;
+}
+@keyframes fadeIn {
+from{opacity: 0;}
+    to{opacity: 1;}
+}
+@keyframes fadeOut {
+    from{opacity: 1;}
+    to{opacity: 0;}
+}
+
